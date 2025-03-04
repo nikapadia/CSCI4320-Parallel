@@ -194,7 +194,6 @@ double genrand_res53(void)
 unsigned long long calculate_pi(long long num_samples)
 {
     unsigned long long local_hits = 0;
-
     for (unsigned long long i = 0; i < num_samples; i++)
     {
         double x = genrand_real1();
@@ -241,14 +240,14 @@ int main(int argc, char *argv[])
 
     unsigned long g_init[624];
     unsigned long length = 624;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < length; i++) // initialize the seed
     {
         g_init[i] = ((1UL << 31) - 1) - (((1UL << 21) - 1) * i) - (((1UL << 15) - 1) * i) - (1023UL * rank);
     }
-
     init_by_array(g_init, length);
     MPI_Barrier(MPI_COMM_WORLD);
 
+    // calculate pi
     unsigned long long start_time = getticks();
     unsigned long long local_hits = 0;
     local_hits = calculate_pi(num_samples);
@@ -260,6 +259,7 @@ int main(int argc, char *argv[])
     unsigned long long total_samples = num_samples * size;
     double pi_estimate = 4.0 * ((double)global_hits / (double)total_samples);
 
+    // print the result
     if (rank == 0)
     {
         printf("Scaling type  : %d\n", scaling_type);
