@@ -1,7 +1,8 @@
-mpi:
-	mpixlc -O3 mpi-hello.c -o mpi-hello
+A3: A3.o
+  mpixlc A3.o -o A3 \
+  -L/usr/local/cuda-11.2/lib64 \
+  -lcudart -lcudadevrt -lcurand -lstdc++ \
+  -L/opt/ibm/spectrum_mpi/lib -lmpi_ibm
 
-mpi-cuda: mpi-cuda.c mpi-cuda.cu
-	mpixlc -O3 mpi-cuda.c -c -o mpi-cuda-xlc.o
-	nvcc -O3 -arch=sm_70 mpi-cuda.cu -c -o mpi-cuda-nvcc.o 
-	mpixlc -O3 mpi-cuda-xlc.o mpi-cuda-nvcc.o -o mpi-cuda-exe -L/usr/local/cuda-11.2/lib64/ -lcudadevrt -lcudart -lstdc++ 
+A3.o: A3.cu
+  nvcc -O3 -arch=sm_70 -I/opt/ibm/spectrum_mpi/include -c A3.cu -o A3.o

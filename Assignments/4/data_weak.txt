@@ -1,0 +1,85 @@
+Number of Threads = 1
+Sample Points per Thread = 8589934592
+Total Hits = 6746512935
+Pi estimate = 3.14158989815041422844
+
+real    4m20.186s
+user    4m20.188s
+sys     0m0.000s
+
+================================================
+
+Number of Threads = 2
+Sample Points per Thread = 8589934592
+Total Hits = 13492963894
+Pi estimate = 3.14157546823844313622
+
+real    4m20.184s
+user    8m40.342s
+sys     0m0.030s
+
+================================================
+
+Number of Threads = 4
+Sample Points per Thread = 8589934592
+Total Hits = 26985950864
+Pi estimate = 3.14157815463840961456
+
+real    4m20.202s
+user    17m20.719s
+sys     0m0.010s
+
+================================================
+
+Number of Threads = 8
+Sample Points per Thread = 8589934592
+Total Hits = 53972144989
+Pi estimate = 3.14159231429221108556
+
+real    4m20.231s
+user    34m41.556s
+sys     0m0.000s
+
+================================================
+
+Number of Threads = 16
+Sample Points per Thread = 8589934592
+Total Hits = 107944386416
+Pi estimate = 3.14159512100741267204
+
+real    4m20.674s
+user    69m28.719s
+sys     0m0.020s
+
+================================================
+
+Number of Threads = 32
+Sample Points per Thread = 8589934592
+Total Hits = 215888600637
+Pi estimate = 3.14159261524036992341
+
+real    4m48.707s
+user    151m47.029s
+sys     0m0.050s
+
+================================================
+
+Number of Threads = 64
+Sample Points per Thread = 8589934592
+Total Hits = 431777278588
+Pi estimate = 3.14159317777375690639
+
+real    7m36.679s
+user    424m56.833s
+sys     0m0.070s
+
+================================================
+
+Number of Threads = 128
+Sample Points per Thread = 8589934592
+Total Hits = 863554790183
+Pi estimate = 3.14159402544828481041
+
+real    12m15.400s
+user    1465m11.138s
+sys     0m0.290s
